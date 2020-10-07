@@ -1,0 +1,41 @@
+<div class="container login-page mt-5">
+  <div class="row">
+    <div class="col-6 offset-md-3 login-page-border">
+      <div class="panel-heading" [ngStyle]="{ 'text-align': 'center' }">
+        Login
+      </div>
+      <div class="panel-body">
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <label>Username:</label>
+            <input
+              type="text"
+              placeholder="Enter username"
+              class="form-control"
+              formControlName="username"
+            />
+          </div>
+          <div class="form-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              placeholder="Enter password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+          <div class="text-center">
+            <input
+              type="button"
+              name=""
+              id=""
+              value="Login"
+              class="btn btn-primary text-center"
+              (click)="loginCheck()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
