@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -9,22 +10,32 @@ import { HttpClient } from "@angular/common/http";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {}
+  loginFailFlag: boolean;
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private route: Router
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ["", [Validators.required]],
-      password: ["", Validators.required],
+      userName: ["", [Validators.required]],
+      password: ["", [Validators.required, Validators.minLength(4)]],
     });
   }
 
   loginCheck = () => {
-    console.log("this.loginForm", this.loginForm.value);
+    console.log("this.loginForm", this.loginForm);
     const data = this.loginForm.value;
+    console.log("data ", data);
     this.http
-      .get("http://localhost:8081/users/getuser/31")
+      .post("http://localhost:8081/auth/loginCheck", data)
       .subscribe((data) => {
-        console.log("data", data);
+        if (data) {
+          this.route.navigate(["/welcome"]);
+        } else {
+          this.loginFailFlag = true;
+        }
       });
     //obserable
   };
