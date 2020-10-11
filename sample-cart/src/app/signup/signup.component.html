@@ -1,69 +1,68 @@
 <div class="container signup-page mt 5">
-<div class ="row">
-    <div class= "col-6 offset-md-3 login-page-boader">
-        <div class = "panel-heading" [ngStyle]="{'text-align': 'center'}">
-            SignUp 
-        </div>
-        <div class="panel-body">
-            <div [formGroup]="signUpForm">
-                <div class="form-group">
-                  <label>First Name</label>
-                  <input 
-                  type="text"
-                  placeholder="EnterFirst Name"
-                  class="form-control"
-                  formControlName="firstName"
-                  />
-                </div>
-                <div class="form-group">
-                    <label>Last Name</label>
-                    <input
-                    type="text",
-                    placeholder="Enter Last Name"
-                    class="form-control"
-                    formControlName="lastName"
-                    />
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input
-                    type="password"
-                    placeholder="Enter Password"
-                    class="form-control"
-                    formControlName="password"
-                    />
-                </div>
-                <div class="form-group">
-                    <label>UserName</label>
-                    <input
-                    type="text"
-                    placeholder="Enter Username"
-                    class="form-control"
-                    formControlName="userName"
-                    />
-                </div>
-                <div class="text-center">
-                    <input
-                    type="button"
-                    id=""
-                    name=""
-                    value="Signup"
-                    class="btn bt-primary text-center"
-                    (click)="signupClick()"
-                    />
-                    <div
+  <div class="row">
+    <div class="col-6 offset-md-3 login-page-boader">
+      <div class="panel-heading" [ngStyle]="{ 'text-align': 'center' }">
+        SignUp
+      </div>
+      <div class="panel-body">
+        <div [formGroup]="signUpForm">
+          <div class="form-group">
+            <label>First Name</label>
+            <input
+              type="text"
+              placeholder="EnterFirst Name"
+              class="form-control"
+              formControlName="firstName"
+            />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input
+              type="text"
+              placeholder="Enter Last Name"
+              class="form-control"
+              formControlName="lastName"
+            />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+          <div class="form-group">
+            <label>UserName</label>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              class="form-control"
+              formControlName="userName"
+            />
+          </div>
+          <div class="text-center">
+            <input
+              type="button"
+              id=""
+              name=""
+              value="Signup"
+              class="btn btn-primary"
+              (click)="signupClick()"
+            />
+            <div
               *ngIf="
-              signUpForm.controls.password.dirty &&
-              signUpForm.controls.password.errors
+                signUpForm.controls.password.dirty &&
+                signUpForm.controls.password.errors
               "
               [ngStyle]="{ color: 'red' }"
             >
               Password should be greater than 4 letters
             </div>
-                </div>
-            </div>
-
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
