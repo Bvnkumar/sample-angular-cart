@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
+  signupSuccess : boolean;
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -32,9 +33,11 @@ export class SignupComponent implements OnInit {
     this.http
       .post("http://localhost:8081/users/create", data)
       .subscribe((data) => {
-        if (data) {
-          this.route.navigate(["/welcome"]);
-        }
+        this.signupSuccess=true;
+        // if (data) {
+        //   this.route.navigate(["/welcome"]);
+        // }
+        setTimeout(() =>{ this.route.navigate(["/login"]); }, 3000);
       });
   };
 }

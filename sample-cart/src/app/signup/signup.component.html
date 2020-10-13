@@ -5,6 +5,9 @@
         SignUp
       </div>
       <div class="panel-body">
+        <div *ngIf="signupSuccess" class="alert alert-success">
+          <strong> User hass been created successfully</strong> 
+        </div>
         <div [formGroup]="signUpForm">
           <div class="form-group">
             <label>First Name</label>
