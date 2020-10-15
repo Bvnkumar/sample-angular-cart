@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       .post("http://localhost:8081/auth/loginCheck", data)
       .subscribe((data) => {
         if (data) {
+          console.log("");
           this.route.navigate(["/welcome"]);
         } else {
           this.loginFailFlag = true;
