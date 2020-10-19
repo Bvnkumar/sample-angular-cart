@@ -10,9 +10,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductComponent } from './product/product.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, SignupComponent, WelcomeComponent, NavbarComponent, ProductComponent],
+  declarations: [AppComponent, LoginComponent, SignupComponent, WelcomeComponent, NavbarComponent, ProductComponent, CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
