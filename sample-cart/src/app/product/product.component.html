@@ -6,7 +6,7 @@
     >
       <div class="card">
         <img class="card-img" src="{{ item.product_image }}" alt="Vans" />
-        <div class="card-img-overlay d-flex justify-content-end">
+        <div class="d-flex justify-content-end">
           <a href="#" class="card-link text-danger like">
             <i class="fas fa-heart"></i>
           </a>
@@ -35,9 +35,9 @@
             <div class="price text-success">
               <h5 class="mt-4">${{ item.price }}</h5>
             </div>
-            <a href="#" class="btn btn-danger mt-3"
-              ><i class="fas fa-shopping-cart"></i> Add to Cart</a
-            >
+            <div class="btn btn-danger mt-3" (click)="addItems(item.id)">
+              <i class="fas fa-shopping-cart cart-dimensions"></i> Add to Cart
+            </div>
           </div>
         </div>
       </div>
