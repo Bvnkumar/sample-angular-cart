@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { increment } from "./welcome.actions";
 import { Observable } from "rxjs";
-import CartService from "../cart.service";
 
 @Component({
   selector: "app-welcome",
@@ -16,10 +15,7 @@ export class WelcomeComponent implements OnInit {
     // this.count$ = store.select("welcome");
   }
 
-  ngOnInit() {
-    //this.cartService.getItems()
-    console.log("this.cartService.getItems() ", this.cartService.getItems());
-  }
+  ngOnInit() {}
   increment() {
     this.store.dispatch(increment());
   }
