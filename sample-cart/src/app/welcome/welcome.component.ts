@@ -12,7 +12,7 @@ import CartService from "../cart.service";
 export class WelcomeComponent implements OnInit {
   count$: Observable<any>;
 
-  constructor(private store: Store, private cartService: CartService) {
+  constructor(private store: Store) {
     // this.count$ = store.select("welcome");
   }
 
