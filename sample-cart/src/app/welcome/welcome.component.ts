@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { increment } from "./welcome.actions";
 import { Observable } from "rxjs";
+import CartService from "../cart.service";
 
 @Component({
   selector: "app-welcome",
@@ -10,8 +11,8 @@ import { Observable } from "rxjs";
 })
 export class WelcomeComponent implements OnInit {
   count$: Observable<any>;
-
-  constructor(private store: Store) {
+  itemCount;
+  constructor(private store: Store, private cartService: CartService) {
     // this.count$ = store.select("welcome");
   }
 
@@ -19,4 +20,8 @@ export class WelcomeComponent implements OnInit {
   increment() {
     this.store.dispatch(increment());
   }
+  sendAddedItem = () => {
+    this.itemCount = this.cartService.getItems().length;
+    console.log("this.itemCount ", this.itemCount);
+  };
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import CartService from "../cart.service";
 
@@ -8,8 +8,9 @@ import CartService from "../cart.service";
   styleUrls: ["./product.component.scss"],
 })
 export class ProductComponent implements OnInit {
-  constructor(private http: HttpClient, private cartService: CartService) {}
   productList;
+  @Output() sendAddedItem = new EventEmitter();
+  constructor(private http: HttpClient, private cartService: CartService) {}
   ngOnInit() {
     this.http
       .get("http://localhost:8081/product/getAllProducts")
@@ -21,5 +22,6 @@ export class ProductComponent implements OnInit {
   addItems = (item) => {
     this.cartService.addItems(item);
     console.log("this.cartService.getItems() ", this.cartService.getItems());
+    this.sendAddedItem.emit(this.cartService.getItems().length + "");
   };
 }

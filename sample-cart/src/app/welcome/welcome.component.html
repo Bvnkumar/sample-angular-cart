@@ -1,4 +1,5 @@
-<app-navbar></app-navbar>
-<app-product></app-product>
+<app-navbar [cartCount]="itemCount"></app-navbar>
+<app-product (sendAddedItem)="sendAddedItem()"></app-product>
+{{ cartCount }}sds
 <!-- <div>Current Count: {{ count$ | async }}</div>
 <button (click)="increment()">Increment</button> -->

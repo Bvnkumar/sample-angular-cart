@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import CartService from "../cart.service";
 
@@ -9,7 +9,7 @@ import CartService from "../cart.service";
 })
 export class NavbarComponent implements OnInit {
   navForm: FormGroup;
-  cartCount;
+  @Input() cartCount;
   constructor(
     private formBuilder: FormBuilder,
     private cartService: CartService
@@ -19,6 +19,6 @@ export class NavbarComponent implements OnInit {
     this.navForm = this.formBuilder.group({
       search: ["", [Validators.required]],
     });
-    this.cartCount = this.cartService.getItems().length;
+    this.cartCount = 0;
   }
 }

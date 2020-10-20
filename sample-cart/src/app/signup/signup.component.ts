@@ -34,9 +34,6 @@ export class SignupComponent implements OnInit {
       .post("http://localhost:8081/users/create", data)
       .subscribe((data) => {
         this.signupSuccess = true;
-        // if (data) {
-        //   this.route.navigate(["/welcome"]);
-        // }
         setTimeout(() => {
           this.route.navigate(["/login"]);
         }, 3000);
