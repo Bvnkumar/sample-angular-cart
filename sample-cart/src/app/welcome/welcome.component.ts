@@ -12,7 +12,7 @@ export class WelcomeComponent implements OnInit {
   count$: Observable<any>;
 
   constructor(private store: Store) {
-    this.count$ = store.select("welcome");
+   // this.count$ = store.select("welcome");
   }
 
   ngOnInit() {}
