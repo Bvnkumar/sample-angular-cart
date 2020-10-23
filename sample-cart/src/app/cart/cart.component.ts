@@ -9,7 +9,7 @@ import CartService from "../cart.service";
 })
 export class CartComponent implements OnInit {
   constructor(private http: HttpClient, private cartService: CartService) {}
-  cartList;
+  productList;
 
   ngOnInit() {
     this.http
@@ -17,9 +17,15 @@ export class CartComponent implements OnInit {
         "http://localhost:8081/product/getAllOrdersWithIds",
         this.cartService.getItems()
       )
+
       .subscribe((data) => {
         console.log("cartList", data);
-        this.cartList = data;
+        this.productList = data;
       });
   }
+  removeFromCart = (id) => {
+    this.cartService.removeItemsBasedOnId(id);
+    this.productList = this.productList.filter((item) => item.id != id);
+    console.log(" this.cartService.getItems()", this.cartService.getItems());
+  };
 }

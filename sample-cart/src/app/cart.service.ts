@@ -14,4 +14,9 @@ export default class CartService {
   addItems = (item) => {
     this.items.push(item);
   };
+
+  removeItemsBasedOnId = (id) => {
+    var index = this.items.indexOf(id);
+    this.items = this.items.splice(index, 1);
+  };
 }
