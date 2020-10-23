@@ -1,0 +1,12 @@
+1)Show order summary in the cart page
+2)Add navbar to cart page
+3)Need to implement payment screen
+backend: Need to store order history to user
+4)implement a product individual route like /product/samsung
+
+User:
+1)LOgout
+2)account settings---order history-->
+list view items
+
+
