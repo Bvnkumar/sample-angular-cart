@@ -13,6 +13,7 @@ import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "./reducers";
 import { welcomeReducer } from "./welcome/welcome.reducer";
 import { CartComponent } from './cart/cart.component';
+import { PaymentsComponent } from './payments/payments.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CartComponent } from './cart/cart.component';
     NavbarComponent,
     ProductComponent,
     CartComponent,
+    PaymentsComponent,
   ],
   imports: [
     BrowserModule,
