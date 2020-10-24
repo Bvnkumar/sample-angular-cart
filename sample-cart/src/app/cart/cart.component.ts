@@ -10,7 +10,9 @@ import CartService from "../cart.service";
 export class CartComponent implements OnInit {
   constructor(private http: HttpClient, private cartService: CartService) {}
   productList;
+  orderTotal = 0;
 
+  //life cycle method
   ngOnInit() {
     this.http
       .post(
@@ -21,11 +23,18 @@ export class CartComponent implements OnInit {
       .subscribe((data) => {
         console.log("cartList", data);
         this.productList = data;
+        this.productList.forEach((element) => {
+          this.orderTotal += element.price;
+        });
       });
   }
+
   removeFromCart = (id) => {
     this.cartService.removeItemsBasedOnId(id);
     this.productList = this.productList.filter((item) => item.id != id);
-    console.log(" this.cartService.getItems()", this.cartService.getItems());
+    this.orderTotal = 0;
+    this.productList.forEach((element) => {
+      this.orderTotal += element.price;
+    });
   };
 }

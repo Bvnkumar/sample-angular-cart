@@ -12,7 +12,9 @@ export default class CartService {
   };
 
   addItems = (item) => {
-    this.items.push(item);
+    if (this.items.indexOf(item) < 0) {
+      this.items.push(item);
+    }
   };
 
   removeItemsBasedOnId = (id) => {
