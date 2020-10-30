@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import CartService from "../cart.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-cart",
@@ -8,7 +9,11 @@ import CartService from "../cart.service";
   styleUrls: ["./cart.component.scss"],
 })
 export class CartComponent implements OnInit {
-  constructor(private http: HttpClient, private cartService: CartService) {}
+  constructor(
+    private http: HttpClient,
+    private cartService: CartService,
+    private route: Router
+  ) {}
   productList;
   orderTotal = 0;
 
@@ -36,5 +41,19 @@ export class CartComponent implements OnInit {
     this.productList.forEach((element) => {
       this.orderTotal += element.price;
     });
+  };
+
+  proceedToPay = () => {
+    const items = this.cartService.getItems();
+    console.log("items ", items);
+    this.http
+      .post(
+        "http://localhost:8081/orders/insertOrders",
+        "{" + items.toString() + "}"
+      )
+      .subscribe((data) => {
+        console.log("data ", data);
+        this.route.navigate(["payment"]);
+      });
   };
 }
