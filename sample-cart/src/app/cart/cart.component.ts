@@ -47,10 +47,7 @@ export class CartComponent implements OnInit {
     const items = this.cartService.getItems();
     console.log("items ", items);
     this.http
-      .post(
-        "http://localhost:8081/orders/insertOrders",
-        "{" + items.toString() + "}"
-      )
+      .post("http://localhost:8081/orders/insertOrders", items)
       .subscribe((data) => {
         console.log("data ", data);
         this.route.navigate(["payment"]);

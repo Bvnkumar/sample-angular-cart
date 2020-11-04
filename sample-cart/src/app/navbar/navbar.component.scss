@@ -10,3 +10,21 @@
   border-radius: 26px;
   padding: 0px 6px;
 }
+.color-white {
+  color: white;
+}
+
+.user-navbar {
+  width: 250px;
+  height: 100px;
+  background: lightgray;
+  position: absolute;
+  right: 67px;
+  display: none;
+}
+
+.user-navbar-block:hover {
+  .user-navbar {
+    display: block;
+  }
+}

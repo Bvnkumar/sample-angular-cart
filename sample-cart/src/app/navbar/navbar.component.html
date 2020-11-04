@@ -45,7 +45,7 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" [formGroup]="navForm">
+    <form class="form-inline" [formGroup]="navForm">
       <input
         class="form-control mr-sm-2"
         type="search"
@@ -56,6 +56,16 @@
         Search
       </button>
     </form>
+    <div class="color-white ml-2 user-navbar-block">
+      <div class="color-white">
+        User
+        <div class="user-navbar">
+          <div [routerLink]="['/account-settings']" class="pl-2 pt-2">
+            User Settings
+          </div>
+        </div>
+      </div>
+    </div>
     <div [routerLink]="['/cart']" class="pl-2">
       <i class="fa fa-shopping-cart cart-dimensions" aria-hidden="true"></i>
       <span class="cart-count">{{ cartCount }}</span>

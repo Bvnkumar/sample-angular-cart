@@ -14,6 +14,7 @@ import { reducers, metaReducers } from "./reducers";
 import { welcomeReducer } from "./welcome/welcome.reducer";
 import { CartComponent } from './cart/cart.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PaymentsComponent } from './payments/payments.component';
     ProductComponent,
     CartComponent,
     PaymentsComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,16 +3,17 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
-import {CartComponent} from "./cart/cart.component";
-import {PaymentsComponent} from "./payments/payments.component";
-
+import { CartComponent } from "./cart/cart.component";
+import { PaymentsComponent } from "./payments/payments.component";
+import { AccountSettingsComponent } from "./account-settings/account-settings.component";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
   { path: "welcome", component: WelcomeComponent },
-  {path : "cart",component :CartComponent},
-  {path : "payment",component : PaymentsComponent },
+  { path: "cart", component: CartComponent },
+  { path: "payment", component: PaymentsComponent },
+  { path: "account-settings", component: AccountSettingsComponent },
 ];
 
 @NgModule({
