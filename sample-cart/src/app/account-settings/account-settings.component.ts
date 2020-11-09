@@ -21,7 +21,9 @@ export class AccountSettingsComponent implements OnInit {
       this.ordersList=this.userData.orderList.map(item=>{
         return item.product;
       })
+      console.log("OrderList1",this.ordersList);
       this.ordersList=lodash.flattenDeep(this.ordersList)
+      console.log("OrderList",this.ordersList);
       console.log(" UserData",this.userData);
       console.log(" this.ordersList ",  this.ordersList);
     });

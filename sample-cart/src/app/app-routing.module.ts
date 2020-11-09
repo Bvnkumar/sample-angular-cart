@@ -8,6 +8,7 @@ import { PaymentsComponent } from "./payments/payments.component";
 import { AccountSettingsComponent } from "./account-settings/account-settings.component";
 
 const routes: Routes = [
+  { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
   { path: "welcome", component: WelcomeComponent },
